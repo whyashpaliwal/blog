@@ -1,0 +1,34 @@
+/* BlogList.css */
+
+.blog-list {
+    padding: 16px;
+  }
+  
+  .blog-item {
+    background-color: #fff; /* Adjust background color as needed */
+    border: 1px solid #e0e0e0; /* Adjust border color as needed */
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  
+  .blog-item h1, .blog-item h2, .blog-item h3, .blog-item h4, .blog-item h5, .blog-item h6 {
+    margin-top: 0;
+  }
+  
+  .blog-item p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-item a {
+    color: #007bff; /* Adjust link color as needed */
+  }
+  
+  .blog-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
