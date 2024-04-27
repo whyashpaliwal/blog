@@ -1,65 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Content from Markdown</title>
-    <style>
-        /* Add your CSS styles here */
-    </style>
-</head>
-<body>
-    <!-- Container for the dynamic content -->
-    <div id="dynamicContentContainer"></div>
+---
+Title: My First Blog Post
+Date: April 28, 2024
+Category: Technology
+---
 
-    <script>
-        // Function to fetch and render Markdown content
-        async function fetchAndRenderMarkdown(fileNames) {
-            const converter = new showdown.Converter();
-            
-            // Iterate over the array of file names
-            for (const fileName of fileNames) {
-                try {
-                    // Fetch Markdown content from the file
-                    const response = await fetch(`./blogs/${fileName}.md`);
-                    const markdownText = await response.text();
+# My First Blog Post
 
-                    // Split metadata and content
-                    const [metadata, content] = markdownText.split('---').filter(Boolean);
+This is my first blog post. Welcome to my blog!
 
-                    // Parse metadata
-                    const metadataLines = metadata.split('\n');
-                    const metadataObj = {};
-                    metadataLines.forEach(line => {
-                        const [key, value] = line.split(':').map(item => item.trim());
-                        metadataObj[key] = value;
-                    });
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed vitae elit sed massa tincidunt vestibulum. Sed vitae nisl at est tempus ultricies sit amet non odio. Duis sit amet nisi eget nunc pharetra commodo. Cras non augue eu dolor bibendum sollicitudin. Sed ut quam nec turpis vestibulum aliquam. Integer ullamcorper, turpis eget mattis elementum, metus lacus vulputate erat, ut tincidunt nunc quam sed libero.
 
-                    // Convert Markdown content to HTML
-                    const htmlContent = converter.makeHtml(content);
+Duis at nisi vel nisi convallis consequat. Nam in neque vitae arcu consequat vulputate. Sed elementum dolor eget nisi hendrerit, nec elementum elit consequat. In eget tellus vel enim suscipit auctor. Ut eu magna vestibulum, blandit sapien sed, laoreet mi. Cras in velit quis lacus tristique pharetra id in nulla. Aliquam erat volutpat. Sed sodales lectus nec nulla ultrices, eu lacinia nisl hendrerit.
 
-                    // Render the HTML content with metadata
-                    const formattedHTML = `
-                        <div class="blog-post">
-                            <h2>${metadataObj.title}</h2>
-                            <p>Author: ${metadataObj.author}</p>
-                            <p>Date: ${metadataObj.date}</p>
-                            <div class="content">${htmlContent}</div>
-                        </div>
-                    `;
-                    document.getElementById('dynamicContentContainer').innerHTML += formattedHTML;
-                } catch (error) {
-                    console.error(`Error fetching or rendering Markdown from ${fileName}.md:`, error);
-                }
-            }
-        }
+## Subheading
 
-        // Call the function to fetch and render Markdown content
-        const fileNames = ['post1', 'post2']; // Example array of file names
-        fetchAndRenderMarkdown(fileNames);
-    </script>
+Curabitur ac dui eu nisi iaculis elementum ac a nisi. Nulla auctor euismod massa, non placerat arcu bibendum nec. Maecenas sollicitudin ante nec mi dignissim, nec ornare dui molestie. Vivamus vehicula nisi a lorem lacinia, non aliquam mi blandit. Integer maximus, ligula sed congue mattis, lorem libero ultrices nisl, a hendrerit sem nulla at mi. Nulla facilisi.
 
-    <!-- Include the Showdown library for Markdown conversion -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
-</body>
-</html>
+Vivamus dictum felis nec feugiat eleifend. Maecenas venenatis eleifend justo a ullamcorper. Vivamus convallis posuere felis, id vehicula tortor tincidunt sed. Nullam fermentum convallis diam. Sed eget justo magna. Mauris consequat magna eget diam lacinia fermentum. Nullam sit amet risus ac dui aliquet facilisis. Integer et justo arcu.

@@ -1,34 +1,37 @@
-/* BlogList.css */
-
-.blog-list {
-    padding: 16px;
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
   }
   
-  .blog-item {
-    background-color: #fff; /* Adjust background color as needed */
-    border: 1px solid #e0e0e0; /* Adjust border color as needed */
-    border-radius: 4px;
-    padding: 16px;
-    margin-bottom: 16px;
-    overflow: hidden;
+  .post-list {
+    list-style: none;
+    padding: 0;
   }
   
-  .blog-item h1, .blog-item h2, .blog-item h3, .blog-item h4, .blog-item h5, .blog-item h6 {
-    margin-top: 0;
+  .post {
+    margin-bottom: 30px;
   }
   
-  .blog-item p {
-    margin-top: 0;
-    margin-bottom: 1rem;
+  .post-title {
+    font-size: 24px;
   }
   
-  .blog-item a {
-    color: #007bff; /* Adjust link color as needed */
+  .post-date {
+    font-style: italic;
+    color: #888;
   }
   
-  .blog-item img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
+  .post-excerpt {
+    margin-top: 10px;
+    font-size: 16px;
   }
+  
+  .sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Add more styling as needed */
   
